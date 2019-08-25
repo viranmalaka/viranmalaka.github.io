@@ -40,6 +40,39 @@
         });
     });
 
+
+    /*----------------------------------------------------*/
+    /*  portfolio_isotope
+    /*----------------------------------------------------*/
+    function our_gallery(){
+        if ( $('.portfolio_area').length ){
+            // Activate isotope in container
+            $(".portfolio_list_inner").imagesLoaded( function() {
+                $(".portfolio_list_inner").isotope({
+                    itemSelector: ".col-md-4",
+                });
+            });
+            // Add isotope click function
+            $(".porfolio_menu ul li").on('click',function(){
+                $(".porfolio_menu ul li").removeClass("active");
+                $(this).addClass("active");
+
+                var selector = $(this).attr("data-filter");
+                $(".portfolio_list_inner").isotope({
+                    filter: selector,
+                    animationOptions: {
+                        duration: 450,
+                        easing: "linear",
+                        queue: false,
+                    }
+                });
+                return false;
+            });
+        }
+    }
+    our_gallery();
+
+
     /*----------------------------------------------------*/
     /*  Blog slider
     /*----------------------------------------------------*/
@@ -80,10 +113,10 @@
             disableDoubleClickZoom: true,
             mapTypeControl: false,
             zoom: $zoom,
-                styles: [{"featureType":"administrative.country","elementType":"geometry","stylers":[{"visibility":"simplified"},{"hue":"#ff0000"}]}]
-            });
+            styles: [{"featureType":"administrative.country","elementType":"geometry","stylers":[{"visibility":"simplified"},{"hue":"#ff0000"}]}]
+        });
 
-        }
+    }
 
 
 //
@@ -116,10 +149,10 @@
 
     // preloader js
     $(window).load(function() { // makes sure the whole site is loaded
-		$('#preloader_spinner').fadeOut(); // will first fade out the loading animation
-		$('#preloader').delay(150).fadeOut('slow'); // will fade out the white DIV that covers the website.
-		$('body').delay(150).css({'overflow':'visible'})
+        $('#preloader_spinner').fadeOut(); // will first fade out the loading animation
+        $('#preloader').delay(150).fadeOut('slow'); // will fade out the white DIV that covers the website.
+        $('body').delay(150).css({'overflow':'visible'})
     })
 
 
-})(jQuery)
+})(jQuery);
