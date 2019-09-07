@@ -1,9 +1,9 @@
 $(document).ready(function(){
-    
+
     (function($) {
         "use strict";
 
-    
+
     jQuery.validator.addMethod('answercheck', function (value, element) {
         return this.optional(element) || /^\bcat\b$/.test(value)
     }, "type the correct answer -_-");
@@ -26,7 +26,6 @@ $(document).ready(function(){
                 },
                 message: {
                     required: true,
-                    minlength: 20
                 }
             },
             messages: {
@@ -50,8 +49,9 @@ $(document).ready(function(){
                 $(form).ajaxSubmit({
                     type:"POST",
                     data: $(form).serialize(),
-                    url:"contact_process.php",
-                    success: function() {
+                    url:"https://formsubmit.co/dgviranmalaka@gmail.com",
+                    success: function(s) {
+                        console.log(s);
                         $('#contactForm :input').attr('disabled', 'disabled');
                         $('#contactForm').fadeTo( "slow", 0.15, function() {
                             $(this).find(':input').attr('disabled', 'disabled');
@@ -59,7 +59,8 @@ $(document).ready(function(){
                             $('#success').fadeIn()
                         })
                     },
-                    error: function() {
+                    error: function(e) {
+                        console.log(e);
                         $('#contactForm').fadeTo( "slow", 0.15, function() {
                             $('#error').fadeIn()
                         })
@@ -68,6 +69,6 @@ $(document).ready(function(){
             }
         })
     })
-        
+
  })(jQuery)
 })

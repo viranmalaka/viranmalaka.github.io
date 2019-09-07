@@ -22,7 +22,7 @@
     // instance of fuction while Window Scroll event
 	$(window).on('scroll', function () {
 		stickyHeader()
-	})
+	});
 
     /*----------------------------------------------------*/
     /*  Skill js
@@ -70,7 +70,7 @@
             });
         }
     }
-    our_gallery();
+    // our_gallery();
 
 
     /*----------------------------------------------------*/
@@ -91,40 +91,6 @@
         }
     }
     blog_slider();
-
-
-
-    /*----------------------------------------------------*/
-    /*  Google map js
-    /*----------------------------------------------------*/
-
-    if ( $('#mapBox').length ){
-        var $lat = $('#mapBox').data('lat');
-        var $lon = $('#mapBox').data('lon');
-        var $zoom = $('#mapBox').data('zoom');
-        var map = new GMaps({
-            el: '#mapBox',
-            lat: $lat,
-            lng: $lon,
-            scrollwheel: false,
-            scaleControl: true,
-            streetViewControl: false,
-            panControl: true,
-            disableDoubleClickZoom: true,
-            mapTypeControl: false,
-            zoom: $zoom,
-            styles: [{"featureType":"administrative.country","elementType":"geometry","stylers":[{"visibility":"simplified"},{"hue":"#ff0000"}]}]
-        });
-
-    }
-
-
-//
-//        $('.header_area .nav.navbar-nav li').click(function(e) {
-//            e.preventDefault(); //prevent the link from being followed
-//            $('.header_area .nav.navbar-nav li').removeClass('active');
-//            $(this).addClass('active');
-//        });
 
 
     $('.header_area .nav.navbar-nav li a[href^="#"]:not([href="#"])').on('click', function(event) {

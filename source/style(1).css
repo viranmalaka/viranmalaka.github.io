@@ -1311,29 +1311,29 @@ body, p, h1, h2, h3, h4, h5, h6 {
 }
 
 .footer_inner ul li:nth-child(6) a {
-  background: #d8545d;
+  background: #549dd8;
   color: #fff;
 }
 
 .footer_inner ul li:nth-child(7) a {
-  background: #5ecbf3;
+  background: #292017;
   color: #fff;
 }
 
 .footer_inner ul li:nth-child(8) a {
-  background: #ff3ba4;
+  background: #f48024;
   color: #fff;
 }
 
 .footer_inner ul li:nth-child(9) a {
-  background: #e299c2;
+  background: #f48024;
   color: #fff;
 }
 
-.footer_inner ul li:last-child a {
-  background: #faaa5e;
-  color: #fff;
-}
+/*.footer_inner ul li:last-child a {*/
+/*  background: #faaa5e;*/
+/*  color: #fff;*/
+/*}*/
 
 .footer_copyright {
   background: rgba(0, 0, 0, 0.7);
