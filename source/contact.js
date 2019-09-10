@@ -46,12 +46,12 @@ $(document).ready(function(){
                 }
             },
             submitHandler: function(form) {
+                console.log(s, $(form).serialize());
                 $(form).ajaxSubmit({
                     type:"POST",
                     data: $(form).serialize(),
                     url:"https://formsubmit.co/dgviranmalaka@gmail.com",
                     success: function(s) {
-                        console.log(s);
                         $('#contactForm :input').attr('disabled', 'disabled');
                         $('#contactForm').fadeTo( "slow", 0.15, function() {
                             $(this).find(':input').attr('disabled', 'disabled');
